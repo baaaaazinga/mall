@@ -3,15 +3,46 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-COMPATIBLE" CONTENT="IE=edge,chrome=1">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>mall</title>
+    <style>
+      html{ font-size: 10px;}
+        @media (min-width: 376px) and (max-width: 414px) {
+          html{font-size: 11px;}
+        }
+
+        @media (min-width: 415px) and (max-width: 639px) {
+          html{font-size: 13px;}
+        }
+
+        @media (min-width: 640px) and (max-width: 719px) {
+          html{font-size: 14px;}
+        }
+
+        @media (min-width: 720px) and (max-width: 749px) {
+          html{font-size: 15px;}
+        }
+
+        @media (min-width: 750px) and (max-width: 799px) {
+          html{font-size: 16px;}
+        }
+
+        @media (min-width: 800px) and (max-width: 992px) {
+          html{font-size: 20px;}
+        }
+
+        body {
+          margin: 0;
+          font-size: 1.6rem;
+        }
+    </style>
   </head>
-  <body>
+  <body style="background-color: #fff">
     <noscript>
       <strong>We're sorry but mall doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
-    <!-- built files will be auto injected -->
   </body>
 </html>

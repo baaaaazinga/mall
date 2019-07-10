@@ -4,17 +4,37 @@ import Router from 'vue-router';
 Vue.use(Router);
 
 export default new Router({
-  mode:'history',
+  mode: 'history',
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'home',
-    //   component: Home,
-    // },
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   component: () => import('./views/About.vue'),
-    // },
+    {
+      path: '/',
+      redirect: '/home',
+    },
+    {
+      path: '/home',
+      component: () => import('./components/tabbar/HomeContainer.vue'),
+    },
+    {
+      path: '/member',
+      component: () => import('./components/tabbar/MemberContainer.vue'),
+    },
+    {
+      path: '/shopcar',
+      component: () => import('./components/tabbar/ShopcarContainer.vue'),
+    },
+    {
+      path: '/search',
+      component: () => import('./components/tabbar/SearchContainer.vue'),
+    },
+    {
+      path: '/home/newslist',
+      component: () => import('./components/news/newsList.vue'),
+    },
+    {
+      path: '/home/news/:id',
+      component: () => import('./components/news/newsDetail.vue'),
+    },
   ],
+  // 重设linkActiveClass类，让选中状态高亮显示
+  linkActiveClass: 'mui-active',
 });
