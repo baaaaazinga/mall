@@ -40,6 +40,9 @@ export default {
 
 
 <style>
+html, body{
+	font-size: 10px;
+}
 
 #app{
 	/* padding-top: 2.5rem;
