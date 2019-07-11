@@ -11,7 +11,7 @@
 		<ul class="mui-table-view mui-grid-view mui-grid-9">
 			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" v-for="(item,index) in containerImgs" :key="index">
 				<router-link :to="item.path">
-					<img :src="item.img" alt="">
+					<img :src="item.img" alt="" @click="fail()">
 					<div class="mui-media-body" v-text="item.title"></div>
 				</router-link>
 			</li>
@@ -20,6 +20,9 @@
 </template>
 
 <script>
+import { Toast } from 'mint-ui';
+import { setTimeout } from 'timers';
+
 export default {
   data() {
     return {
@@ -65,15 +68,20 @@ export default {
     };
   },
   methods: {
-    // getBanners() {
-    // 	this.$axios.get("http://vue.studyit.io/api/getlunbo").then(result => {
-    // 			console.log(result);
-    // 		}
-    // 	)
-    // }
+    fail() {
+      setTimeout(() => {
+        // console.log(this.$route)
+        if (this.$route.hash == '#') {
+          Toast({
+            message: '该功能还在完善中，敬请期待~',
+            duration: 2000,
+          });
+        }
+      }, 100);
+    },
   },
   created() {
-    // this.getBanners();
+
   },
   mounted() {
     const that = this;
