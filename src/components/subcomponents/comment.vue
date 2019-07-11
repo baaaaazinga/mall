@@ -63,9 +63,10 @@ export default {
       this.$axios({
         method: 'post',
         url: `http://www.liulongbin.top:3005/api/postcomment/${this.$route.params.id}`,
+        emulateJSON: true,
         content: this.msg.trim(),
       }).then((result) => {
-        console.log(result);
+        // console.log(result);
         if (result.data.status === 0) {
           const cmt = {
             user_name: '匿名用户',

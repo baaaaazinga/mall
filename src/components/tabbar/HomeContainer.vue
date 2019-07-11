@@ -42,7 +42,7 @@ export default {
         {
           img: require('../../assets/homeContainerImg/shareImg.png'),
           title: '图片分享',
-          path: '#',
+          path: '/home/pictures',
         },
         {
           img: require('../../assets/homeContainerImg/goods.png'),

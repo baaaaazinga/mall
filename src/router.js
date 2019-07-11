@@ -34,6 +34,10 @@ export default new Router({
       path: '/home/news/:id',
       component: () => import('./components/news/newsDetail.vue'),
     },
+    {
+      path: '/home/pictures',
+      component:() => import('./components/sharePicture/sharePictureDetail.vue')
+    }
   ],
   // 重设linkActiveClass类，让选中状态高亮显示
   linkActiveClass: 'mui-active',
