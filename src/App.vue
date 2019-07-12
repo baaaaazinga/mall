@@ -4,7 +4,7 @@
     <mt-header fixed title="商城">
 			<router-link to="/" slot="left">
 				<mt-button icon="back">返回</mt-button>
-		</router-link>
+			</router-link>
 		</mt-header>
 
 	<!-- main区域 -->
@@ -46,6 +46,10 @@ export default {
 <style scoped>
 html, body{
 	font-size: 10px;
+}
+
+.mint-header.is-fixed{
+	z-index: 100;
 }
 
 #app{
