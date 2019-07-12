@@ -37,6 +37,10 @@ export default new Router({
     {
       path: '/home/pictures',
       component:() => import('./components/sharePicture/sharePictureDetail.vue')
+    },
+    {
+      path: '/home/pictures/:id',
+      component:() => import('./components/sharePicture/pictureDetail.vue')
     }
   ],
   // 重设linkActiveClass类，让选中状态高亮显示

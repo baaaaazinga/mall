@@ -1,23 +1,13 @@
 import Vue from 'vue';
 import axios from 'axios';
 import moment from 'moment';
-// import {
-//   Header,
-//   Swipe,
-//   SwipeItem,
-//   Button,
-//   Lazyload,
-// } from 'mint-ui';
-// Vue.use(Lazyload);
-// Vue.component(Header.name, Header);
-// Vue.component(Swipe.name, Swipe);
-// Vue.component(SwipeItem.name, SwipeItem);
-// Vue.component(Button.name, Button);
 import store from './store';
 import router from './router';
 import App from './App.vue';
 import './lib/mui/css/mui.min.css';
 import './lib/mui/css/icons-extra.css';
+import VuePreview from 'vue-preview'
+Vue.use(VuePreview)
 
 Vue.prototype.$axios = axios;
 

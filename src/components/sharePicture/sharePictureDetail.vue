@@ -19,15 +19,16 @@
 
     <!-- 图片展示区域 -->
     <ul class="picture-list">
-      <li class="pre-picture" 
-                  v-for="item in pictureList" 
-                  :key="item.id">
+      <router-link v-for="item in pictureList" 
+                  :key="item.id"
+                  :to="'/home/pictures/'+item.id"
+                  tag="li">
         <img class="pictures" v-lazy="item.img_url">
         <div class="picture-info">
           <div class="picture-info-title">{{ item.title }}</div>
           <div class="picture-info-content" v-html="item.content"></div>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
@@ -89,7 +90,7 @@ export default {
       padding: 0 1rem;
       margin: 0;
 
-      .pre-picture{
+      li{
         list-style: none;
         background-color: #ccc;
         margin-bottom: 1.5rem;
