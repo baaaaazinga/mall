@@ -30,7 +30,7 @@
 			</router-link>
 			<router-link class="set-mui-tab-item" to="/search">
 				<span class="mui-icon mui-icon-search"></span>
-				<span class="mui-tab-label">设置</span>
+				<span class="mui-tab-label">搜索</span>
 			</router-link>
 		</nav>
   </div>

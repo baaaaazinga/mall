@@ -47,7 +47,7 @@ export default {
         {
           img: require('../../assets/homeContainerImg/goods.png'),
           title: '商品购买',
-          path: '#',
+          path: '/home/shop',
         },
         {
           img: require('../../assets/homeContainerImg/msgboard.png'),
@@ -70,7 +70,6 @@ export default {
   methods: {
     fail() {
       setTimeout(() => {
-        // console.log(this.$route)
         if (this.$route.hash == '#') {
           Toast({
             message: '该功能还在完善中，敬请期待~',
