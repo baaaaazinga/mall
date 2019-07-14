@@ -1,13 +1,11 @@
 <template>
-  <div class="member">
-    <h3>this is member page</h3>
-  </div>
+  <h3>商品</h3>
 </template>
 
 <script>
 export default {
 
-};
+}
 </script>
 
 <style>

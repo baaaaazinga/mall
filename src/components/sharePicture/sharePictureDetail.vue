@@ -10,7 +10,7 @@
               item.id == 0 ? 'mui-active':'']" 
               v-for="item in cates" 
               :key="item.id"
-              @click="getPictureList(item.id)">
+              @tap="getPictureList(item.id)">
             {{ item.title }}
           </a>
         </div>
@@ -58,7 +58,7 @@ export default {
   methods: {
     getAllCategory(){
       this.$axios.get("http://www.liulongbin.top:3005/api/getimgcategory/").then((result) => {
-        console.log(result.data.message)
+        // console.log(result.data.message)
         if(result.data.status === 0){
           result.data.message.unshift({ title:"全部", id: 0 });
           this.cates = result.data.message;
@@ -67,7 +67,7 @@ export default {
     },
     getPictureList(pictureId){
       this.$axios.get("http://www.liulongbin.top:3005/api/getimages/" + pictureId).then((result) => {
-        console.log(result);
+        // console.log(result);
         if(result.data.status === 0 ){
           this.pictureList = result.data.message;
         }else{

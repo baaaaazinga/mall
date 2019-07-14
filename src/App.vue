@@ -2,9 +2,9 @@
   <div id="app">
     <!--顶部区域-->
     <mt-header fixed title="商城">
-			<router-link to="/" slot="left">
+			<div @click="goBack()" slot="left">
 				<mt-button icon="back">返回</mt-button>
-			</router-link>
+			</div>
 		</mt-header>
 
 	<!-- main区域 -->
@@ -38,8 +38,18 @@
 
 <script>
 export default {
+	data() {
+		return {
+			
+		}
+	},
 
-};
+	methods: {
+		goBack() {
+			this.$router.go(-1);
+		},
+	}
+}
 </script>
 
 

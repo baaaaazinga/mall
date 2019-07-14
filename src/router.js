@@ -45,6 +45,10 @@ export default new Router({
     {
       path: '/home/shop',
       component:() => import('./components/shop/goods.vue')
+    },
+    {
+      path: '/home/shop/:id',
+      component:() => import('./components/shop/goodsDetail.vue')
     }
   ],
   // 重设linkActiveClass类，让选中状态高亮显示

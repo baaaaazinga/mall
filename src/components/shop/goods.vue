@@ -1,56 +1,63 @@
 <template>
   <div class="goods-list">
-    <div class="per-goods-list">
-      <img src="http://img4.imgtn.bdimg.com/it/u=2918413575,4097775641&fm=26&gp=0.jpg" alt="">
-      <strong class="goods-title">不要1998，也不要998，只卖799</strong>
+    
+    <div class="per-goods-list" 
+                v-for="item in goodsList" 
+                :key="item.id"
+                @click="getDetail(item.id)">
+      <img :src="item.img_url" alt="">
+      <strong class="goods-title">{{ item.title }}</strong>
       <div class="goods-info">
         <div class="goods-price">
-          <span class="new-price">￥799</span>
-          <span class="old-price">￥1999</span>
+          <span class="new-price">{{ item.sell_price }}</span>
+          <span class="old-price">{{ item.market_price }}</span>
         </div>
         <div class="goods-status">
-          <span>热卖中</span>
-          <span>剩55件</span>
+          <span>热卖中</span> 
+          <span>剩{{ item.stock_quantity }}件</span>
         </div>
       </div>
     </div>
 
-    <div class="per-goods-list">
-      <img src="http://img4.imgtn.bdimg.com/it/u=2918413575,4097775641&fm=26&gp=0.jpg" alt="">
-      <strong class="goods-title">不要1998，也不要998，只卖799</strong>
-      <div class="goods-info">
-        <div class="goods-price">
-          <span class="new-price">￥799</span>
-          <span class="old-price">￥1999</span>
-        </div>
-        <div class="goods-status">
-          <span>热卖中</span>
-          <span>剩55件</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="per-goods-list">
-      <img src="http://img4.imgtn.bdimg.com/it/u=2918413575,4097775641&fm=26&gp=0.jpg" alt="">
-      <strong class="goods-title">不要1998，也不要998，只卖799</strong>
-      <div class="goods-info">
-        <div class="goods-price">
-          <span class="new-price">￥799</span>
-          <span class="old-price">￥1999</span>
-        </div>
-        <div class="goods-status">
-          <span>热卖中</span>
-          <span>剩55件</span>
-        </div>
-      </div>
-    </div>
-
+    <mt-button type="danger" size="large" @click="getMore()">加载更多</mt-button>
   </div>
 </template>
 
 <script>
+import { Toast } from 'mint-ui'
 export default {
-  
+  data() {
+    return {
+      pageindex: 1,
+      goodsList: []
+    }
+  },
+
+  created() {
+    this.getGoodsList()
+  },
+
+  methods: {
+    getGoodsList() {
+      this.$axios.get(`http://www.liulongbin.top:3005/api/getgoods?pageindex=${this.pageindex}`).then((res) => {
+        // console.log(res);
+        if(res.data.status === 0){
+          this.goodsList = this.goodsList.concat(res.data.message)
+        }else{
+          Toast('糟糕，电波无法到达~')
+        }
+      })
+    },
+
+    getMore() {
+      this.pageindex++;
+      this.getGoodsList();
+    },
+
+    getDetail(id) {
+      this.$router.push(`/home/shop/${id}`)
+    }
+  },
 }
 </script>
 

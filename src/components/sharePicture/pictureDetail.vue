@@ -53,7 +53,6 @@ export default {
         // console.log(res)
         if(res.data.status === 0){
           res.data.message.forEach(item => {
-            console.log(item)
             item.w = 600;
             item.h = 400;
             item.msrc = item.src;
